@@ -13,7 +13,7 @@ const ShowDocument = () => {
 
   useEffect(() => {
     getDocument(id);
-  }, []);
+  }, [id]);
 
   const getDocument = async (id) => {
     const response = await axios.get(`${endpoint}/document/${id}`);

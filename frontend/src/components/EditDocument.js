@@ -61,7 +61,8 @@ const EditDocument = () => {
       setComments(data.data.comments);
     };
     getDocumentById();
-  }, []);
+  }, [id]);
+
   return (
     <div>
       <h2>Editar documento</h2>
