@@ -1,68 +1,70 @@
-.invoice {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    margin: 20px;
-  }
-  
-  .invoice h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .invoice-details {
-    margin-bottom: 20px;
-  }
-  
-  .invoice-details div {
-    margin-bottom: 10px;
-  }
-  
-  .invoice-items {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .invoice-items th,
-  .invoice-items td {
-    border: 1px solid #ccc;
-    padding: 10px;
-  }
-  
-  .invoice-items th {
-    background-color: #f0f0f0;
-    font-weight: bold;
-  }
-  
-  .invoice-total {
-    font-weight: bold;
-    margin-top: 20px;
-  }
-  
-  .btn-print {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 20px;
-    margin-left: 5px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .btn-print:hover {
-    background-color: #45a049;
-  }
+body {
+  padding: 50px;
+}
 
-  .btn-back {
-    background-color: #FF0000;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
+* {
+  box-sizing: border-box;
+}
+
+.receipt-main {
+  display: inline-block;
+  width: 100%;
+  padding: 15px;
+  font-size: 12px;
+  border: 1px solid #000;
+}
+
+.receipt-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+  
+.receipt-label {
+  font-weight: 600;
+}
+
+.text-large {
+  font-size: 16px;
+}
+
+.receipt-section {
+  margin-top: 10px;
+}
+
+.receipt-footer {
+  text-align: center;
+  background: #ff0000;
+}
+
+.receipt-signature {
+  height: 80px;
+  margin: 50px 0;
+  padding: 0 50px;
+  background: #fff;
+  
+  .receipt-line {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #000;
   }
   
-  .btn-back:hover {
-    background-color: #fc6868;
+  p {
+    text-align: center;
+    margin: 0;
   }
+}
+
+.invoice-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.square {
+  width: 120px;
+  height: 120px;
+  border: 2px solid #000;
+}

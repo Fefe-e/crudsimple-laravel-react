@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 import "./Invoice.css";
+import logo from "../x.png";
 
 const endpoint = "http://127.0.0.1:8000/api/v1";
 const ShowDocument = () => {
@@ -26,73 +27,65 @@ const ShowDocument = () => {
 
   return (
     <>
-      <div className="invoice">
-        <h1>
+      <div class="receipt-main">
+        <div className="invoice-logo">
+          <div className="square">
+            <img width="110px" src={logo} alt="Logo" className="logo" />
+          </div>
+        </div>
+        <p class="receipt-title">
           Recibo provisorio{" "}
           <smal style={{ fontSize: "10px" }}>
             DOCUMENTO NO VÁLIDO CÓMO FACTURA
           </smal>
-        </h1>
-        <div className="invoice-details">
-          <div>
-            <strong>N°</strong> 000{document.id}
-          </div>
-          <div>
-            <strong>Fecha:</strong>
-          </div>
+        </p>
+
+        <div class="receipt-section pull-left">
+          <span class="receipt-label text-large">Número:</span>
+          <span class="text-large">000{document.id}</span>
         </div>
 
-        <table className="invoice-items">
-          <tbody>
-            <tr>
-              <td>Señor(es)</td>
-              <td>{document.mister}</td>
-            </tr>
-            <tr>
-              <td>Domicilio</td>
-              <td>{document.address}</td>
-              <td>Localidad</td>
-              <td>{document.locality}</td>
-            </tr>
-            <tr>
-              <td>Recibí(mos) la suma de pesos:</td>
-              <td>{document.amount}</td>
-            </tr>
-            <tr>
-              <td>En concepto de:</td>
-              <td>{document.concept}</td>
-            </tr>
-            <tr>
-              <td>Operador:</td>
-              <td>{document.operator}</td>
-            </tr>
-            <tr>
-              <td>Servicio:</td>
-              <td>{document.services}</td>
-            </tr>
-            <tr>
-              <td>Fecha de salida:</td>
-              <td>{document.departure_date}</td>
-              <td>Destino</td>
-              <td>{document.destination}</td>
-            </tr>
-            <tr>
-              <td>Efectivo / Cheque N°:</td>
-              <td>{document.cash_checknumber}</td>
-            </tr>
-            <tr>
-              <td>Banco:</td>
-              <td>{document.bank}</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div className="invoice-total">
-          <strong>Observaciones:</strong> {document.comments}
+        <div class="receipt-section">
+          <span class="receipt-label">Señor(es):</span>
+          <span>{document.mister}</span>
         </div>
 
-        <div className="invoice-total">
-          <strong>Total:</strong> {document.total}
+        <div class="receipt-section">
+          <span class="receipt-label">Domicilio:</span>
+          <span>{document.address}</span>
+          <span class="receipt-label">Localidad:</span>
+          <span>{document.locality}</span>
+        </div>
+
+        <div class="receipt-section">
+          <p>Recibí(mos) la suma de pesos:</p>
+          <p>{document.amount}</p>
+        </div>
+
+        <div class="receipt-section">
+          <p>En concepto de:</p>
+          <p>{document.concept}</p>
+        </div>
+
+        <div class="receipt-signature col-xs-6">
+          <p class="receipt-line"></p>
+          <span>Operador: {document.operator}</span>
+          <span>Servicio: {document.services}</span>
+          <span>Fecha de salida: {document.departure_date}</span>
+          <span>Destino: {document.destination}</span>
+          <span>Efectivo / Cheque N°: {document.destination}</span>
+          <span>Banco: {document.bank}</span>
+        </div>
+
+        <div class="receipt-signature col-xs-6">
+          <p class="receipt-line"></p>
+          <div className="invoice-total">
+            <strong>Observaciones:</strong> {document.comments}
+          </div>
+
+          <div className="invoice-total">
+            <strong>Total:</strong> {document.total}
+          </div>
         </div>
 
         <button className="btn-back" onClick={() => handleGoBack()}>
