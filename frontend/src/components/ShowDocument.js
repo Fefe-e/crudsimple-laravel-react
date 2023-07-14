@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-
-import logo from "../x.png";
+import logo from "../LogoLaNuevaRuta.png";
 
 const endpoint = "http://127.0.0.1:8000/api/v1";
 const ShowDocument = () => {
@@ -25,76 +24,207 @@ const ShowDocument = () => {
   };
 
   return (
-    <>
       <div class="receipt-main">
-        <div className="invoice-logo">
-          <div className="square">
-            <img width="110px" src={logo} alt="Logo" className="logo" />
+        <div
+          style={{
+            position: "relative",
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+          }}
+        >
+          <div
+            style={{
+              height: "150px",
+              border: "1px solid #000000",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img src={logo} alt='imagen' height={100} width={300} />
+          </div>
+          <div
+            style={{
+              position: "absolute",
+              width: "30px",
+              height: "30px",
+              backgroundColor: "white",
+              border: "1px solid #000000",
+              justifySelf: "center",
+              textAlign: "center",
+              fontSize: "20px",
+            }}
+          >
+            x
+          </div>
+          <div
+            style={{
+              height: "150px",
+              border: "1px solid #000000",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+              rowGap: "20px",
+            }}
+          >
+          <div>
+            <div class="receipt-title">
+              <div>
+                Recibo provisorio{" "}
+              </div>
+              <div style={{fontSize: "7px", alignSelf: "center" }}>
+                DOCUMENTO NO VÁLIDO CÓMO FACTURA
+              </div>
+            </div>
+        </div>
+          
+          <div
+              style={{
+                display: "flex",
+                width: "100%",
+                justifyContent: "space-around",
+              }}
+          >
+            <div>
+            Fecha
+          </div>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(3, 1fr)",
+                  columnGap: "1px",
+                }}
+              >
+                
+                <div
+                  style={{
+                    width: "50px",
+                    border: "1px solid #000000",
+                    borderRadius: "5px",
+                    textAlign: "start",
+                  }}
+                >
+                  
+                </div>
+                <div
+                  style={{
+                    width: "50px",
+                    border: "1px solid #000000",
+                    borderRadius: "5px",
+                    textAlign: "start",
+                  }}
+                >
+                  
+                </div>
+                <div
+                  style={{
+                    width: "50px",
+                    border: "1px solid #000000",
+                    borderRadius: "5px",
+                    textAlign: "start",
+                  }}
+                >
+                  
+                </div>
+              </div>
+              <div>Número: 000{document.id}</div>
+            </div>
           </div>
         </div>
-        <p class="receipt-title">
-          Recibo provisorio{" "}
-          <smal style={{ fontSize: "10px" }}>
-            DOCUMENTO NO VÁLIDO CÓMO FACTURA
-          </smal>
-        </p>
-
-        <div class="receipt-section pull-left">
-          <span class="receipt-label text-large">Número:</span>
-          <span class="text-large">000{document.id}</span>
-        </div>
-
-        <div class="receipt-section">
-          <span class="receipt-label">Señor(es):</span>
-          <span>{document.mister}</span>
-        </div>
-
-        <div class="receipt-section">
-          <span class="receipt-label">Domicilio:</span>
-          <span>{document.address}</span>
-          <span class="receipt-label">Localidad:</span>
-          <span>{document.locality}</span>
-        </div>
-
-        <div class="receipt-section">
-          <p>Recibí(mos) la suma de pesos:</p>
-          <p>{document.amount}</p>
-        </div>
-
-        <div class="receipt-section">
-          <p>En concepto de:</p>
-          <p>{document.concept}</p>
-        </div>
-
-        <div class="receipt-signature col-xs-6">
-          <p class="receipt-line"></p>
-          <span>Operador: {document.operator}</span>
-          <span>Servicio: {document.services}</span>
-          <span>Fecha de salida: {document.departure_date}</span>
-          <span>Destino: {document.destination}</span>
-          <span>Efectivo / Cheque N°: {document.destination}</span>
-          <span>Banco: {document.bank}</span>
-        </div>
-
-        <div class="receipt-signature col-xs-6">
-          <p class="receipt-line"></p>
-          <div className="invoice-total">
-            <strong>Observaciones:</strong> {document.comments}
+        <div style={{
+            position: "relative",
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+          }}>
+          <div class="receipt-section">
+            <div class="receipt-label">Señor(es): {document.mister}</div>
           </div>
 
-          <div className="invoice-total">
-            <strong>Total:</strong> {document.total}
+          <div class="receipt-section">
+            <div class="receipt-label">Domicilio: {document.address}</div>
+            <div class="receipt-label">Localidad: {document.locality}</div>
+          </div>
+            
+          <div class="receipt-section">
+            <div>Recibí(mos) la suma de pesos: {document.amount}</div>
+          </div>
+
+          <div class="receipt-section">
+            <div>En concepto de: {document.concept}</div>
           </div>
         </div>
+        <div class="receipt-line"></div>
 
-        <button className="btn-back" onClick={() => handleGoBack()}>
-          Atrás
-        </button>
-        <button className="btn-print" onClick={window.print}>
-          Imprimir
-        </button>
+        <div class="receipt-signature">
+          <div>Operador: {document.operator}</div>
+          <div>Servicio: {document.services}</div>
+          <div>Fecha de salida: {document.departure_date}</div>
+          <div>Destino: {document.destination}</div>
+        </div>
+        <div
+          style={{
+            position: "relative",
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+          }}
+        >
+          <div
+            style={{
+              height: "150px",
+              border: "1px solid #000000",
+              display: "flex",
+              justifyContent: "center",
+              alignContent: "center",
+            }}
+          >
+            <div>
+              <div style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignContent: "center",
+              }}>
+                <div class="paddingTop">
+                Efectivo / Cheque N°: {document.destination}
+                </div>
+                <div class="paddingTop">
+                  Banco: {document.bank}
+                </div>
+                <div class="paddingTop">
+                  Observaciones: {document.comments}
+                </div>
+              </div>
+              <div class="invoice-total">
+                <strong>Total:</strong> {document.total}
+              </div>
+            </div>
+          </div>
+          <div
+            style={{
+              height: "150px",
+              border: "1px solid #000000",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "start",
+              alignItems: "start",
+              padding: 10,
+            }}
+          >
+            Recibir conforme
+          </div>
+        </div>
+        <div style={{
+              padding: 25,
+            }}>
+          <button class="btn btn-back" onClick={() => handleGoBack()}>
+            Atrás
+          </button>
+          <button class="btn btn-success" onClick={window.print}>
+            Imprimir
+          </button>
+        </div>
       </div>
-    </>
   );
 };
 
