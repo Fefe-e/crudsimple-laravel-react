@@ -25,14 +25,15 @@ const ShowDocuments = () => {
         <Link
           to="/create"
           className="btn btn-success btn-lg mt-2 mb-2 text-white"
+          style={{ width: "40%" }}
         >
-          Create
+          + Nuevo documento
         </Link>
       </div>
       <table className="table table-striped">
         <thead className="bg-primary text-white">
           <tr>
-            <th>#Nro.</th>
+            <th>#Nro. documento</th>
             <th>Señor/es</th>
             <th>Dirección</th>
             <th>Localidad</th>
@@ -49,16 +50,16 @@ const ShowDocuments = () => {
 
               <td>
                 <Link to={`/view/${document.id}`} className="btn btn-success">
-                  ver
+                  Ver
                 </Link>{" "}
-                <Link to={`/edit/${document.id}`} className="btn btn-info">
-                  Edit
+                <Link to={`/edit/${document.id}`} className="btn btn-primary">
+                  Editar
                 </Link>{" "}
                 <button
                   onClick={() => deleteDocument(document.id)}
                   className="btn btn-danger"
                 >
-                  Delete
+                  Eliminar
                 </button>
               </td>
             </tr>

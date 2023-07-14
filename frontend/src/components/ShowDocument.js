@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-import "./Invoice.css";
 import logo from "../x.png";
 
 const endpoint = "http://127.0.0.1:8000/api/v1";
