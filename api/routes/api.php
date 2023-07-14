@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\DocumentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,21 +22,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Versionado de la API.
 Route::prefix('v1')->group(function () {
-
-    //Controlador de productos
-    Route::controller(ProductoController::class)->group(function (){
-
-        //Todos los productos
-        Route::get('/products', 'index');
-        //Un producto en específico
-        Route::get('/product/{id}','show');
-        //Guardar un producto
-        Route::post('/product', 'store');
-        //Actualizar un producto
-        Route::put('/product/{id}', 'update');
-        //Eliminar un producto
-        Route::delete('/product/{id}', 'destroy');
-    
+    //Controlador de documentos
+    Route::controller(DocumentController::class)->group(function () {
+        //Todos los documentos
+        Route::get('/documents', 'index');
+        //Un documento en específico
+        Route::get('/document/{id}', 'show');
+        //Guardar un documento
+        Route::post('/document', 'store');
+        //Actualizar un documento
+        Route::put('/document/{id}', 'update');
+        //Eliminar un documento
+        Route::delete('/document/{id}', 'destroy');
     });
-
 });

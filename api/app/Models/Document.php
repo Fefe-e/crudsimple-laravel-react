@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Producto extends Model
-{   
+class Document extends Model
+{
   //Nombre de la tabla en db, si no ponemos nada por defecto si el modelo se llama Producto --> la tabla tiene que ser productos en plural
-  protected $table = 'producto';
-  
+  protected $table = 'documents';
+
   //Por defecto los campos se tratan como protegidos y se debe indicar cuales pueden ser llenados de esta forma.
   //protected $fillable = ['name', 'description', 'measurement_unit', 'status'];
 
