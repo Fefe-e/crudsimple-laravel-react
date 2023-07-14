@@ -72,9 +72,9 @@ class DocumentController extends Controller
             $document->concept = $request->concept;
             $document->operator = $request->operator;
             $document->services = $request->services;
-            $document->departure_date = $request->departure_date;
+            $document->departure_date = $request->departuredate;
             $document->destination = $request->destination;
-            $document->cash_checknumber = $request->cash_checknumber;
+            $document->cash_checknumber = $request->cashchecknumber;
             $document->bank = $request->bank;
             $document->total = $request->total;
             $document->comments = $request->comments;
@@ -105,9 +105,9 @@ class DocumentController extends Controller
             $document->concept = $request->concept;
             $document->operator = $request->operator;
             $document->services = $request->services;
-            $document->departure_date = $request->departure_date;
+            $document->departure_date = $request->departuredate;
             $document->destination = $request->destination;
-            $document->cash_checknumber = $request->cash_checknumber;
+            $document->cash_checknumber = $request->cashchecknumber;
             $document->bank = $request->bank;
             $document->total = $request->total;
             $document->comments = $request->comments;

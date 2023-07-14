@@ -41,7 +41,7 @@ const ShowDocument = () => {
               alignItems: "center",
             }}
           >
-            <img src={logo} alt='imagen' />
+            <img src={logo} alt='imagen' height={100} width={300} />
           </div>
           <div
             style={{
@@ -132,24 +132,29 @@ const ShowDocument = () => {
             </div>
           </div>
         </div>
-        
+        <div style={{
+            position: "relative",
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+          }}>
+          <div class="receipt-section">
+            <div class="receipt-label">Señor(es): {document.mister}</div>
+          </div>
 
-        <div class="receipt-section">
-          <div class="receipt-label">Señor(es): {document.mister}</div>
-        </div>
+          <div class="receipt-section">
+            <div class="receipt-label">Domicilio: {document.address}</div>
+            <div class="receipt-label">Localidad: {document.locality}</div>
+          </div>
+            
+          <div class="receipt-section">
+            <div>Recibí(mos) la suma de pesos: {document.amount}</div>
+          </div>
 
-        <div class="receipt-section">
-          <div class="receipt-label">Domicilio: {document.address}</div>
-          <div class="receipt-label">Localidad: {document.locality}</div>
+          <div class="receipt-section">
+            <div>En concepto de: {document.concept}</div>
+          </div>
         </div>
-          <div class="receipt-line"></div>
-        <div class="receipt-section">
-          <div>Recibí(mos) la suma de pesos: {document.amount}</div>
-        </div>
-
-        <div class="receipt-section">
-          <div>En concepto de: {document.concept}</div>
-        </div>
+        <div class="receipt-line"></div>
 
         <div class="receipt-signature">
           <div>Operador: {document.operator}</div>
