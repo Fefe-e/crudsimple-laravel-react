@@ -208,7 +208,13 @@ const ShowDocument = () => {
           padding: 25,
         }}
       >
-        <button class="btn btn-back" onClick={() => handleGoBack()}>
+        <button
+          class="btn btn-danger"
+          style={{
+            marginRight: "2px",
+          }}
+          onClick={() => handleGoBack()}
+        >
           Atrás
         </button>
         <button class="btn btn-success" onClick={window.print}>
