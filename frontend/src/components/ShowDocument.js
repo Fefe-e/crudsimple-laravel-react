@@ -3,7 +3,6 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import logo from "../LogoLaNuevaRuta.png";
 
-const endpoint = "http://127.0.0.1:8000/api/v1";
 const ShowDocument = () => {
   const [document, setDocument] = useState({});
 
@@ -14,7 +13,9 @@ const ShowDocument = () => {
   }, [id]);
 
   const getDocument = async (id) => {
-    const response = await axios.get(`${endpoint}/document/${id}`);
+    const response = await axios.get(
+      `${process.env.REACT_APP_ENDPOINT_API}/document/${id}`
+    );
     console.log(response.data.data);
     setDocument(response.data.data);
   };

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const endpoint = "http://127.0.0.1:8000/api/v1";
 const ShowDocuments = () => {
   const [documents, setDocuments] = useState([]);
   useEffect(() => {
@@ -10,12 +9,14 @@ const ShowDocuments = () => {
   }, []);
 
   const getAllDocuments = async () => {
-    const response = await axios.get(`${endpoint}/documents`);
+    const response = await axios.get(
+      `${process.env.REACT_APP_ENDPOINT_API}/documents`
+    );
     setDocuments(response.data.data);
   };
 
   const deleteDocument = async (id) => {
-    await axios.delete(`${endpoint}/document/${id}`);
+    await axios.delete(`${process.env.REACT_APP_ENDPOINT_API}/document/${id}`);
     getAllDocuments();
   };
 

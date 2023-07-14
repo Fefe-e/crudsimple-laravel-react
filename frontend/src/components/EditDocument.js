@@ -2,8 +2,6 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const endpoint = "http://localhost:8000/api/v1/document";
-
 const EditDocument = () => {
   const [mister, setMister] = useState("");
   const [address, setAddress] = useState("");
@@ -24,7 +22,7 @@ const EditDocument = () => {
 
   const update = async (e) => {
     e.preventDefault();
-    await axios.put(`${endpoint}/${id}`, {
+    await axios.put(`${process.env.REACT_APP_ENDPOINT_API}/document/${id}`, {
       mister: mister,
       address: address,
       locality: locality,
@@ -44,7 +42,9 @@ const EditDocument = () => {
 
   useEffect(() => {
     const getDocumentById = async () => {
-      const { data } = await axios.get(`${endpoint}/${id}`);
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_ENDPOINT_API}/document/${id}`
+      );
 
       setMister(data.data.mister);
       setAddress(data.data.address);

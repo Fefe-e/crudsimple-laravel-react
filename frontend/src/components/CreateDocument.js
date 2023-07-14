@@ -2,8 +2,6 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const endpoint = "http://localhost:8000/api/v1/document";
-
 const CreateDocument = () => {
   const [mister, setMister] = useState("");
   const [address, setAddress] = useState("");
@@ -23,7 +21,7 @@ const CreateDocument = () => {
 
   const store = async (e) => {
     e.preventDefault();
-    await axios.post(endpoint, {
+    await axios.post(`${process.env.REACT_APP_ENDPOINT_API}/document`, {
       mister: mister,
       address: address,
       locality: locality,
