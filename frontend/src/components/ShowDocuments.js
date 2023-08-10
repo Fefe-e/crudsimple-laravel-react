@@ -34,10 +34,11 @@ const ShowDocuments = () => {
       <table className="table table-striped">
         <thead className="bg-primary text-white">
           <tr>
-            <th>#Nro. documento</th>
+            <th>#</th>
             <th>Señor/es</th>
             <th>Dirección</th>
             <th>Localidad</th>
+            <th>Fecha</th>
             <th></th>
           </tr>
         </thead>
@@ -48,7 +49,7 @@ const ShowDocuments = () => {
               <td>{document.mister}</td>
               <td>{document.address}</td>
               <td>{document.locality}</td>
-
+              <td>{document.document_date_formatted}</td>
               <td>
                 <Link to={`/view/${document.id}`} className="btn btn-success">
                   Ver

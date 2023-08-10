@@ -22,6 +22,7 @@ class CreateDocumentsTable extends Migration
             $table->string('concept')->nullable();
             $table->string('operator')->nullable();
             $table->string('services')->nullable();
+            $table->date('document_date');
             $table->string('departure_date')->nullable();
             $table->string('destination')->nullable();
             $table->string('cash_checknumber')->nullable();

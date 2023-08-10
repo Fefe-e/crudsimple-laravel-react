@@ -10,6 +10,7 @@ const EditDocument = () => {
   const [concept, setConcept] = useState("");
   const [operator, setOperator] = useState("");
   const [services, setServices] = useState("");
+  const [documentdate, setDocumentdate] = useState("");
   const [departuredate, setDeparturedate] = useState("");
   const [destination, setDestination] = useState("");
   const [cashchecknumber, setCashchecknumber] = useState("");
@@ -30,6 +31,7 @@ const EditDocument = () => {
       concept: concept,
       operator: operator,
       services: services,
+      documentdate: documentdate,
       departuredate: departuredate,
       destination: destination,
       cashchecknumber: cashchecknumber,
@@ -53,6 +55,7 @@ const EditDocument = () => {
       setConcept(data.data.concept);
       setOperator(data.data.operator);
       setServices(data.data.services);
+      setDocumentdate(data.data.document_date);
       setDeparturedate(data.data.departure_date);
       setDestination(data.data.destination);
       setCashchecknumber(data.data.cash_checknumber);
@@ -134,6 +137,16 @@ const EditDocument = () => {
             value={services}
             onChange={(e) => setServices(e.target.value)}
             type="text"
+            className="form-control"
+          />
+        </div>
+
+        <div className="mb-3">
+          <label className="form-label">Fecha</label>
+          <input
+            type="date"
+            value={documentdate}
+            onChange={(e) => setDocumentdate(e.target.value)}
             className="form-control"
           />
         </div>

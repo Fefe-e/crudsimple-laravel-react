@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\Document;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Date;
+
 
 class DocumentController extends Controller
 {
@@ -72,6 +74,7 @@ class DocumentController extends Controller
             $document->concept = $request->concept;
             $document->operator = $request->operator;
             $document->services = $request->services;
+            $document->document_date = $request->documentdate;
             $document->departure_date = $request->departuredate;
             $document->destination = $request->destination;
             $document->cash_checknumber = $request->cashchecknumber;
@@ -105,6 +108,7 @@ class DocumentController extends Controller
             $document->concept = $request->concept;
             $document->operator = $request->operator;
             $document->services = $request->services;
+            $document->document_date = $request->documentdate;
             $document->departure_date = $request->departuredate;
             $document->destination = $request->destination;
             $document->cash_checknumber = $request->cashchecknumber;

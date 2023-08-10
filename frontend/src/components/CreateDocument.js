@@ -10,6 +10,7 @@ const CreateDocument = () => {
   const [concept, setConcept] = useState("");
   const [operator, setOperator] = useState("");
   const [services, setServices] = useState("");
+  const [documentdate, setDocumentdate] = useState("");
   const [departuredate, setDeparturedate] = useState("");
   const [destination, setDestination] = useState("");
   const [cashchecknumber, setCashchecknumber] = useState("");
@@ -29,6 +30,7 @@ const CreateDocument = () => {
       concept: concept,
       operator: operator,
       services: services,
+      documentdate: documentdate,
       departuredate: departuredate,
       destination: destination,
       cashchecknumber: cashchecknumber,
@@ -110,6 +112,16 @@ const CreateDocument = () => {
             value={services}
             onChange={(e) => setServices(e.target.value)}
             type="text"
+            className="form-control"
+          />
+        </div>
+
+        <div className="mb-3">
+          <label className="form-label">Fecha</label>
+          <input
+            type="date"
+            value={documentdate}
+            onChange={(e) => setDocumentdate(e.target.value)}
             className="form-control"
           />
         </div>
