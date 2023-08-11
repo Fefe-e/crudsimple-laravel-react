@@ -309,8 +309,8 @@ const ShowDocument = () => {
                 }}
               >
                 <span className="receipt-label">Efectivo / Cheque N°:</span>{" "}
-                {document.destination
-                  ? document.destination
+                {document.cash_checknumber
+                  ? document.cash_checknumber
                   : "........................."}
               </div>
               <div
