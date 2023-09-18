@@ -42,8 +42,8 @@ const CreateDocument = () => {
   };
 
   return (
-    <div>
-      <h2>Crear nuevo documento</h2>
+    <div className="container">
+      <h1 className="title">Crear nuevo documento</h1>
 
       <form onSubmit={store}>
         <div className="mb-3">
@@ -176,9 +176,10 @@ const CreateDocument = () => {
           />
         </div>
 
-        <div className="mb-3">
+        <div className="mb-3 w-100">
           <label className="form-label">Observaciones</label>
-          <input
+          <textarea
+            rows={5}
             value={comments}
             onChange={(e) => setComments(e.target.value)}
             type="text"
@@ -186,7 +187,7 @@ const CreateDocument = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-success">
+        <button type="submit" className="btnSave">
           Guardar
         </button>
       </form>

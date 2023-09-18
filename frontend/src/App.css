@@ -50,11 +50,23 @@ form {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  background-color: rgb(243, 243, 243);
+  padding: 4rem;
+  border-radius: 2rem;
+  box-shadow: 0px 0px 8px -5px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 8px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 8px -5px rgba(0,0,0,0.75);
 }
 
 form > div {
   width: 48%;
   margin-bottom: 10px;
+}
+
+@media(max-widt:768px){
+  form > div{
+    width: 100%;
+  }
 }
 
 form > button {
@@ -96,6 +108,12 @@ form > button {
   height: 50px;
   margin: 0;
 }
+
+@media(max-width:685px){
+  .receipt-title{
+    display: grid;
+  }
+}
   
 .receipt-section {
   margin-top: 10px;
@@ -128,5 +146,107 @@ form > button {
   padding-top: 100;
 }
 
+.header-flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #5469d4;
+  font-weight: bold;
+  margin: 3rem auto;
+}
 
+.title{
+  text-align: center;
+  margin: 3rem auto;
+  color: #5469d4;
+}
 
+.form-label{
+  font-weight: bold;
+}
+
+.btnSave{
+  width: 8rem;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  background-color: green;
+  transition: all .2s ease-in;
+  color: #ffffff;
+  border: none;
+  margin-left: auto;
+  margin-top: 1rem;
+}
+
+.btnSave:hover{
+  background-color: rgb(0, 86, 0);
+  box-shadow: 0px 0px 8px -5px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 8px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 8px -5px rgba(0,0,0,0.75);
+}
+
+.w-100{
+  width: 100%;
+}
+
+.float-right{
+  float: right;
+}
+
+.actionButtons{
+  display: flex;
+  column-gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+@media(max-width:875px){
+  .actionButtons{
+    display: grid;
+    row-gap: 0.5rem;
+  }
+}
+
+.logoRecibo{
+  width: 300px;
+}
+
+@media(max-width:768px){
+  .logoRecibo{
+    width: 200px;
+  }
+}
+
+@media(max-width:525px){
+  .logoRecibo{
+    width: 90%;
+  }
+}
+
+.fechaReciboHeader{
+  display: flex;
+  width: 100%;
+  justify-content: "space-evenly";
+}
+
+@media(max-width:495px){
+  .fechaReciboHeader{
+    display: grid;
+  }
+}
+
+.totalRecibo{
+  margin-left: 15px;
+  margin-top: 20px;
+  margin-right: 15px;
+  justify-content: flex-end;
+  width: 50%;
+  border: 1.5px solid #000000;
+  border-radius: 100px;
+  padding: 8px;
+}
+
+@media(max-width:495px){
+  .totalRecibo{
+    width: auto;
+    text-align: center;
+  }
+}

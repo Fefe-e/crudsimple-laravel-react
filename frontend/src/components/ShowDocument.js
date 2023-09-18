@@ -61,7 +61,7 @@ const ShowDocument = () => {
               alignItems: "center",
             }}
           >
-            <img src={logo} alt="imagen" height={75} width={190} />
+            <img className="logoRecibo" src={logo} alt="imagen" />
           </div>
           <div
             style={{
@@ -97,13 +97,7 @@ const ShowDocument = () => {
               </div>
             </div>
 
-            <div
-              style={{
-                display: "flex",
-                width: "100%",
-                justifyContent: "space-evenly",
-              }}
-            >
+            <div className="fechaReciboHeader">
               <div>
                 Fecha:{" "}
                 {document.document_date_formatted
@@ -337,18 +331,7 @@ const ShowDocument = () => {
                   : "........................."}
               </div>
 
-              <div
-                style={{
-                  marginLeft: "15px",
-                  marginTop: "20px",
-                  marginRight: "15px",
-                  justifyContent: "flex-end",
-                  width: "50%",
-                  border: "1.5px solid #000000",
-                  borderRadius: "100px",
-                  padding: "8px",
-                }}
-              >
+              <div className="totalRecibo">
                 <span className="receipt-label">Total:</span>{" "}
                 {document.total ? document.total : "........................."}
               </div>
