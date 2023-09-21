@@ -68,7 +68,7 @@ const EditDocument = () => {
 
   return (
     <div>
-      <h2>Editar documento</h2>
+      <h2 className="title">Editar documento</h2>
 
       <form onSubmit={update}>
         <div className="mb-3">
