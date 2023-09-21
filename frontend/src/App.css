@@ -250,3 +250,14 @@ form > button {
     text-align: center;
   }
 }
+
+.firmaImg{
+  width: 200px;
+}
+
+@media(max-width:495px){
+  .firmaImg{
+    width: 100%;
+    margin-top: 1rem;
+  }
+}

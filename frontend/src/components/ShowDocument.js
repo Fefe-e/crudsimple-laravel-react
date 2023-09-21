@@ -354,9 +354,9 @@ const ShowDocument = () => {
 
             <span
               className="receipt-label"
-              style={{ marginLeft: "15px", marginTop: "45px" }}
+              style={{ marginLeft: "15px" }}
             >
-              <img src={firma} alt="firma-img"/>
+              <img src={firma} alt="firma-img" className="firmaImg"/>
             </span>
           </div>
         </div>
