@@ -211,7 +211,7 @@ const EditDocument = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-success">
+        <button type="submit" className="btnSave">
           Editar
         </button>
       </form>
