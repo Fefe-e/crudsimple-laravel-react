@@ -13,7 +13,7 @@ const ShowDocuments = () => {
       `${process.env.REACT_APP_ENDPOINT_API}/documents`
     );
     setDocuments(response.data.data);
-  });
+  },[]);
 
   const deleteDocument = async (id) => {
     await axios.delete(`${process.env.REACT_APP_ENDPOINT_API}/document/${id}`);
