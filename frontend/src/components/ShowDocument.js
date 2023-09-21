@@ -20,7 +20,7 @@ const ShowDocument = () => {
 
     const printDocument = printWindow.document;
     printDocument.open();
-    printDocument.write("<html><head><title>Print</title></head><body>");
+    printDocument.write("<html><head><style>.firmaImg{max-width:50%}</style><title>Print</title></head><body>");
     printDocument.write(content);
     printDocument.write("</body></html>");
     printDocument.close();
@@ -35,7 +35,6 @@ const ShowDocument = () => {
     const response = await axios.get(
       `${process.env.REACT_APP_ENDPOINT_API}/document/${id}`
     );
-    console.log("documento", response.data.data);
     setDocument(response.data.data);
   };
 
