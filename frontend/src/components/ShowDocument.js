@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import logo from "../LogoLaNuevaRuta.png";
+import firma from "../assets/images/firma_nueva_ruta.png";
 import "../App.css";
 
 const ShowDocument = () => {
@@ -355,7 +356,7 @@ const ShowDocument = () => {
               className="receipt-label"
               style={{ marginLeft: "15px", marginTop: "45px" }}
             >
-              ..................................................
+              <img src={firma} alt="firma-img"/>
             </span>
           </div>
         </div>
